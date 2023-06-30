@@ -6,7 +6,7 @@
 - [x] Activity 1
 - [x] Activity 2
 - [x] Activity 3
-- [ ] Activity 4
+- [x] Activity 4
 - [ ] Activity 5
 - [ ] Activity 6
 - [ ] Activity 7
