@@ -1,9 +1,5 @@
 import React from 'react';
 import './App.css';
-<<<<<<< HEAD
-
-class App extends React.Component {
-=======
 import axios from 'axios';
 
 class App extends React.Compodent {
@@ -22,7 +18,6 @@ componentDidMount() {
     console.error(`Error fetching data: ${error}`);
   })
 }
->>>>>>> main
   render() {
     return (
       <div className="App">
