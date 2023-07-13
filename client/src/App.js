@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-<<<<<<< HEAD
 
+
+class App extends React.Component {
 
   render() {
     return (
@@ -40,3 +41,5 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
       </Router>
     );
   }
+}
+export default App;
