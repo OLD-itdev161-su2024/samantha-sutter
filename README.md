@@ -7,9 +7,10 @@
 - [x] Activity 2
 - [x] Activity 3
 - [x] Activity 4
-- [ ] Activity 5
-- [ ] Activity 6
-- [ ] Activity 7
-- [ ] Activity 8
-- [ ] Activity 9
+- [x] Activity 5
+- [x] Activity 6
+- [x] Activity 7
+- [x] Activity 7 Fix
+- [x] Activity 8
+- [x] Activity 9
 - [ ] Activity 10
