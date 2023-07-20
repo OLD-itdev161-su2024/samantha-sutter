@@ -202,6 +202,66 @@ app.post(
         }
     }
 );
+
+/**
+ *  @route DELETER api/posts/:id
+ *  @desc Delete a post
+ */
+app.delete('/api/posts/:id', auth, async (req, res) => {
+    try {
+        const post = await Post.findById(req.params.id);
+
+        //Make sure post was found
+        if (!post) {
+            return res.status(404).json({ msg: 'Post not found' });
+        }
+
+        //Make sure the request user created the post
+        if (post.user.toString !== req.user.id) {
+            return res.status(401).json({ msg: 'User not authorized' });
+        }
+
+        await post.remove();
+
+        res.json({ mesg: 'Post removed ' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Server error');
+    }
+});
+
+/**
+ *  @route PUT api/posts/:findById
+ *  @desc Update a post
+ */
+app.put('api/posts/:id', auth, async (req, res) => {
+    try {
+        const { title, boyd } = req.body;
+        const post = await Post.findById(req.params.id);
+
+        //Make sure post was found
+        if (!post) {
+            return res.status(404).json({ msg: 'Post not found' });
+        }
+
+        //Make sure the request user created the post
+        if (post.user.toString() !== req.user.id) {
+            return res.status(401).json({ msg: 'User not authorized ' });
+        }
+
+        //Update the post and return
+        post.title = title || post.title;
+        post.body = body || post.body;
+
+        await post.save();
+
+        res.json(post);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Server error');
+    }
+});
+
 //Connection Listenter
 const port = 5000;
 app.listen(port, () => console.log(`Express server running on port ${port}`));
